@@ -1,5 +1,5 @@
 class Api::TodosController < ApplicationController
-  def index
-    @todos = Todo.all_tasks
+  def show
+    @todos = Todo.find(params[:id])
   end
 end

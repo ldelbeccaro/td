@@ -27,7 +27,8 @@ const getToDos = (todos, props) => {
 }
 
 const mapStateToProps = (state, ownProps) => ({
-  todos: getToDos(state.todos, ownProps)
+  todos: getToDos(state.todos, ownProps),
+  offlineTodos: state.offlineTodos
 })
 
 const ToDoListContainer = connect(mapStateToProps)(ToDoList)

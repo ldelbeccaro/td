@@ -1,9 +1,5 @@
-const ADD_TODO = 'ADD_TODO';
-const UPDATE_TODO = 'UPDATE_TODO';
-const DELETE_TODO = 'DELETE_TODO';
-
-export {
-  ADD_TODO,
-  UPDATE_TODO,
-  DELETE_TODO,
-};
+export const ADD_TODO_REQUEST = 'ADD_TODO_REQUEST';
+export const ADD_TODO_SUCCESS = 'ADD_TODO_SUCCESS';
+export const ADD_TODO_FAILURE = 'ADD_TODO_FAILURE';
+export const UPDATE_TODO = 'UPDATE_TODO';
+export const DELETE_TODO = 'DELETE_TODO';
