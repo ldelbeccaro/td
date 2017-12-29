@@ -1,0 +1,42 @@
+// vendor prefixes
+vendor(prop, args)
+  -webkit-{prop} args
+  -moz-{prop} args
+  {prop} args
+
+border-radius()
+  vendor('border-radius', arguments)
+
+box-shadow()
+  vendor('box-shadow', unquote(arguments))
+
+min-content-width()
+  width -moz-min-content
+  width -webkit-min-content
+  width min-content
+
+// colors
+black-gray = #2f2f2f
+light-gray = #7d7d7d
+
+// responsive styles
+
+// mixins - which allow you to add a {block} - use syntax:
+// +media(800px)
+//   flex-direction column
+//   width 50px
+media(width)
+  condition = 'screen and (max-width: %s)' % width
+  @media condition
+    {block}
+
+responsive-property(prop, hash)
+  general = hash['general']
+  {prop} general
+
+  for size, value in hash
+    media-query(unquote(size), prop, value)
+
+media-query(width, prop, args)
+  @media screen and (max-width: width)
+    {prop} args

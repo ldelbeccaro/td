@@ -33,7 +33,7 @@ export const todos = (state = {}, action) => {
     case UPDATE_TODO:
       return {
         ...state,
-        [action.todo.id]: action.todo
+        [action.todo.id]: Object.assign({}, state[action.todo.id] || {}, action.todo)
       };
     case DELETE_TODO:
       let newTodos = {...state};

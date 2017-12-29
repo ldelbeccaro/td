@@ -3,6 +3,8 @@ import React from 'react';
 import AddToDo from './add-to-do/AddToDo'
 import ToDoContainer from './to-do/ToDoContainer'
 
+import './to-do-list.styl'
+
 class ToDoList extends React.Component {
   render() {
     const todos = [...Object.values(this.props.todos), ...Object.values(this.props.offlineTodos)].map(todo => (
@@ -12,7 +14,7 @@ class ToDoList extends React.Component {
       />
     ));
     return (
-      <div className='todo-list-container'>
+      <div className='to-do-list-container'>
         {todos}
         <AddToDo />
       </div>

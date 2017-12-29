@@ -1,23 +1,25 @@
 import React from 'react'
-import styles from './to-do.styl'
+import './to-do.styl'
 
 class ToDo extends React.Component {
   render() {
-    const todo = this.props.todo;
+    const todo = this.props.todo
+
     return (
-      <div className='to-do-item-container'>
+      <div className={`to-do-item-container ${todo.completed ? `to-do-item-completed` : ``}`}>
         <div
-          className={`to-do-item-checkbox ${todo.completed ? `to-do-item-completed` : ``}`}
-          onClick={() => this.props.updateTodo({completed: !todo.completed})}
-        >
-          {todo.completed}
-        </div>
+          className='to-do-item-checkbox'
+          onClick={() => this.props.updateTodo({id: todo.id, completed: !todo.completed})}
+        />
         <input
           className='to-do-item-text'
           defaultValue={todo.text}
-          onChange={e => this.props.updateTodo({id: 1, text: e.target.value})}
+          onChange={e => this.props.updateTodo({id: todo.id, text: e.target.value})}
         />
-        <div className='to-do-item-due-date'>{todo.due_date}</div>
+        <div className='to-do-item-dates'>
+          <div className='to-do-item-start-date'>{todo.start_date || `--`}</div>
+          <div className='to-do-item-due-date'>{todo.due_date || `--`}</div>
+        </div>
         <div
           className='to-do-item-delete'
           onClick={this.props.deleteTodo}

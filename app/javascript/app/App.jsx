@@ -2,7 +2,9 @@ import React from 'react'
 import {  
   BrowserRouter as Router,
   Route
-} from 'react-router-dom';
+} from 'react-router-dom'
+
+import './app.styl'
 
 import ToDoListContainer from '../to-do-list/ToDoListContainer';
 

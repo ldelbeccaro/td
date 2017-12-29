@@ -1,3 +1,31 @@
-+prefix-classes('.to-do-item-')
+@import '../../app/mixins.styl'
+
++prefix-classes('to-do-item-')
   .container
-    display flex
+    align-items center
+    display grid
+    grid-template-columns 20px auto 100px
+    margin 8px 0
+
+    .checkbox
+      border 1px solid black-gray
+      border-radius(50%)
+      height 8px
+      width 8px
+
+    .text
+      border none
+      outline none
+
+    .dates
+      font-size 11px
+
+    &.completed
+      color light-gray
+
+      .checkbox
+        background-color light-gray
+        border 1px solid light-gray
+
+      .text
+        color light-gray
