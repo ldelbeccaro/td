@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
   def home
-    @todos = Todo.all_tasks.to_json
+    @todos = Todo.all_todos.to_json
   end
 end
